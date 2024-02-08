@@ -24,9 +24,8 @@ bool bmpReader::checkImgValid()
 
 int bmpReader::readImg()
 {
-
+    return -1;
 }
-
 
 int bmpReader::getImgHeight()
 {
@@ -41,6 +40,8 @@ int bmpReader::getImgHeight()
     {
         m_imgHeight |= (static_cast<unsigned char>(bytes[i]) << (8 * i));
     }
+
+    return m_imgHeight;
 }
 
 int bmpReader::getImgWidth()
@@ -55,6 +56,8 @@ int bmpReader::getImgWidth()
     {
         m_imgWeight |= (static_cast<unsigned char>(bytes[i]) << (8 * i));
     }
+
+    return m_imgWeight;
 }
 
 int bmpReader::getImgSize()
@@ -70,6 +73,8 @@ int bmpReader::getImgSize()
     {
         m_imgSize |= (static_cast<unsigned char>(bytes[i]) << (8 * i));
     }
+
+    return m_imgSize;
 }
 
 bool bmpReader::isBMPFile()

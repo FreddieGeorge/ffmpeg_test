@@ -23,11 +23,11 @@ imgReader* my_image::createImageReader(const std::string &imgFileName)
         if(dotIndex != std::string::npos)
         {
             std::string extension = imgFileName.substr(dotIndex + 1);
-            /* if(extension == "png")
+            if(extension == "png")
             {
                 return new pngReader(imgFileName);
             }
-            else */if(extension == "bmp")
+            else if(extension == "bmp")
             {
                 return new bmpReader(imgFileName);
             }
