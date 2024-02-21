@@ -7,8 +7,7 @@
 int main(int argc, char* argv[])
 {
     printf("FFmpeg version: %s\n", av_version_info());
-    av_log_set_level(AV_LOG_DEBUG);
-    // return 0;
+    // av_log_set_level(AV_LOG_DEBUG);
 
     AVFormatContext *fmt_ctx = NULL;
     int type = 2;
@@ -40,7 +39,7 @@ int main(int argc, char* argv[])
         {
             printf("open success\n");
             printf("filename : %s \n", fmt_ctx->url);
-            printf("duration : %ld \n", fmt_ctx->duration);
+            printf("duration : %ld s\n", fmt_ctx->duration);
             printf("nb_streams : %u \n", fmt_ctx->nb_streams);
             for (int i = 0; i < fmt_ctx->nb_streams;i++)
             {
@@ -65,7 +64,7 @@ int main(int argc, char* argv[])
             printf("open success\n");
             avformat_find_stream_info(fmt_ctx, NULL);
             printf("filename : %s \n", fmt_ctx->url);
-            printf("duration : %ld \n", fmt_ctx->duration);
+            printf("duration : %ld \n", fmt_ctx->duration / AV_TIME_BASE);
             printf("nb_streams : %u \n", fmt_ctx->nb_streams);
             for (int i = 0; i < fmt_ctx->nb_streams; i++)
             {
