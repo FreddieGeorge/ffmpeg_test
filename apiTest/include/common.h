@@ -1,0 +1,11 @@
+#ifndef COMMON_H
+#define COMMON_H
+
+typedef enum FFMPEG_READ_TYPE
+{
+    FFMPEG_READ_TYPE_MP4 = 0,
+    FFMPEG_READ_TYPE_FLV
+} FFMPEG_READ_TYPE;
+
+
+#endif
